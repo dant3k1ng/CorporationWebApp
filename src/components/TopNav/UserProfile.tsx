@@ -3,6 +3,7 @@ import { IState } from '../../reducers';
 import styled from 'styled-components';
 
 import { Colors } from '../../styledHelpers/Colors';
+import { Link } from 'react-router-dom'; 
 
 const Profile = styled.div`
     width: 100%;
@@ -28,6 +29,10 @@ const H3 = styled.h3`
     color: ${Colors.deepBlue};
 `;
 
+const Link1 = styled(Link)`
+    text-decoration: none;
+    color: ${Colors.deepBlue}
+`;
 
 interface IProps{
     filteredText: string;
@@ -41,7 +46,7 @@ function UserProfile(props: IProps) {
         <Profile>
             <Img src={photo?.thumbnailUrl} alt="user" />
             <Text> {user} </Text> <br/>
-            <H3> See profile </H3>
+            <H3> <Link1 to=""> See profile </Link1> </H3>
         </Profile>
     )
 }

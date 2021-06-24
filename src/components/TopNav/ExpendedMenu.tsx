@@ -2,9 +2,11 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import useDropdown from 'react-dropdown-hook';
 import { useState } from "react";
+import { BrowserRouter as Router, Link } from 'react-router-dom'; 
 
 import UserProfile  from './UserProfile';
 import Logout from "./Logout"
+import { Colors } from '../../styledHelpers/Colors';
 
 
 const WrapperDropdown = styled.div`
@@ -70,6 +72,7 @@ const DropdownBox = styled.div`
     border-top: none;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    z-index: 200;
 `;
 
 const Filter = styled.input`
@@ -103,6 +106,12 @@ const HeadWrapper = styled.div`
     width: 350px;
 `;
 
+const Link1 = styled(Link)`
+    text-decoration: none;
+    color: ${Colors.black}
+`;
+
+
 export const ExpendedMenu: FC = () => {
         const [wrapperRef, dropdownOpen, toogleDropdown] = useDropdown();
         
@@ -122,43 +131,44 @@ export const ExpendedMenu: FC = () => {
                     </HeadWrapper>
                     {dropdownOpen &&
                         <DropdownBox>
+                            <Router>
                             <CompanyDiv>
                                 <Filter placeholder="Filter..." type='text' value={inputText} onChange={inputHandler}/>
                                 
                                 <H3> Platform </H3> <br/>
                                 
                                 {   'Home'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption><MenuImg src="./media/icons/house2.png"/> <P> Home </P> </MenuOption>
+                                    <MenuOption> <Link1 to="/"> <MenuImg src="./media/icons/house2.png"/> <P> Home </P> </Link1> </MenuOption>
                                 }
                                 {   'Publications'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption><MenuImg src="./media/icons/publications.png"/> <P> Publications </P> </MenuOption>
+                                    <MenuOption> <Link1 to="/sides/publications"> <MenuImg src="./media/icons/publications.png"/> <P> Publications </P> </Link1> </MenuOption>
                                 }
                                 {   'People'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption><MenuImg src="./media/icons/people.png"/> <P> People </P>  </MenuOption>
+                                    <MenuOption> <Link1 to="/sides/people"> <MenuImg src="./media/icons/people.png"/> <P> People </P> </Link1> </MenuOption>
                                 }
                                 {   'Entities'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption><MenuImg src="./media/icons/entities2.png"/> <P> Entities </P>  </MenuOption>
+                                    <MenuOption> <Link1 to=""> <MenuImg src="./media/icons/entities2.png"/> <P> Entities </P> </Link1> </MenuOption>
                                 }
                                 {   'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption><MenuImg src="./media/icons/administration.png"/> <P> Administration </P> </MenuOption>
+                                    <MenuOption> <Link1 to="/sides/administration"> <MenuImg src="./media/icons/administration.png"/> <P> Administration </P> </Link1> </MenuOption>
                                 }
 
                                 <H3> Workspaces </H3> <br/>
 
                                 {   'Clinet contract'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption><MenuImg src="../media/icons/contract.png"/> <P> Client contract </P> </MenuOption>
+                                    <MenuOption> <Link1 to=""> <MenuImg src="../media/icons/contract.png"/> <P> Client contract </P> </Link1> </MenuOption>
                                 }
                                 {   'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption><MenuImg src="../media/icons/contract.png"/> <P> Supplier contract </P> </MenuOption>
+                                    <MenuOption> <Link1 to=""> <MenuImg src="../media/icons/contract.png"/> <P> Supplier contract </P> </Link1> </MenuOption>
                                 }
                                 {   'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption><MenuImg src="../media/icons/entities2.png"/> <P> Corporate </P> </MenuOption>
+                                    <MenuOption> <Link1 to=""> <MenuImg src="../media/icons/entities2.png"/> <P> Corporate </P> </Link1> </MenuOption>
                                 }
                                 {   'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption><MenuImg src="../media/icons/book.png"/> <P> Group Norms </P> </MenuOption>
+                                    <MenuOption> <Link1 to=""> <MenuImg src="../media/icons/book.png"/> <P> Group Norms </P> </Link1> </MenuOption>
                                 }
                                 {   'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption><MenuImg src="../media/icons/contract.png"/> <P> Real estate contracts </P> </MenuOption>
+                                    <MenuOption> <Link1 to=""> <MenuImg src="../media/icons/contract.png"/> <P> Real estate contracts </P> </Link1> </MenuOption>
                                 }
 
                             </CompanyDiv>
@@ -166,11 +176,12 @@ export const ExpendedMenu: FC = () => {
                                <br/> <H3> Account </H3> <br/>
                                
                                 <UserProfile filteredText = {inputText} />
-                                <MenuOption><MenuImg src="../media/icons/privacy.png"/> Privacy </MenuOption>
-                                <MenuOption><MenuImg src="../media/icons/settings.png"/> Settings </MenuOption>
+                                <MenuOption> <Link1 to=""> <MenuImg src="../media/icons/privacy.png"/> Privacy </Link1> </MenuOption>
+                                <MenuOption> <Link1 to=""> <MenuImg src="../media/icons/settings.png"/> Settings </Link1> </MenuOption>
                                
                                <Logout/>
                             </AccountDiv>
+                            </Router>
                         </DropdownBox>
                     }
                 </div>

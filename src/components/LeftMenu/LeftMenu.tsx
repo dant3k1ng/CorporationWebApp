@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { Colors } from '../../styledHelpers/Colors';
 import { fontSize } from '../../styledHelpers/FontSizes';
 import { IState } from '../../reducers/index';
+//import { Link } from 'react-router-dom'; 
 
 
 const Wrapper = styled.div`
@@ -92,6 +93,11 @@ const TabsDiv = styled.div`
     margin-left: 5px;
 `;
 
+/*const Link1 = styled(Link)`
+    text-decoration: none;
+    color: ${Colors.deepBlue}
+`;*/
+
 export default function LeftMenu() {
     const user = useSelector((state: IState) => state.user);
     const photo = useSelector((state: IState) => state.photo);
@@ -118,7 +124,7 @@ export default function LeftMenu() {
                     </YourProfile>
                 </UserProfile>
                 <Tabs>
-                    <TabsDiv> <CustomImg src="media/icons/publications.png"/> Publications </TabsDiv>
+                    <TabsDiv> <CustomImg src="media/icons/publications.png"/>  Publications </TabsDiv>
                     <TabsDiv> <CustomImg src="media/icons/ecosystem.png"/> Ecosystem </TabsDiv>
                     <TabsDiv> <CustomImg src="media/icons/entities.png"/> Entities </TabsDiv>
                 </Tabs>

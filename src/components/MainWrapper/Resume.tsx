@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ReactPaginate from 'react-paginate';
 
+import Work from './Work';
 import { Colors } from '../../styledHelpers/Colors';
 import { IComment } from '../../entities/Comment';
 import { IPhoto } from '../../entities/Photo';
@@ -11,23 +12,31 @@ import { getUsers } from '../../api/User';
 import { getPhotos} from '../../api/Photo';
 import { filter, filterByUser } from '../../helpers/Filter';
 import { Items } from './Selector';
-import Work from './Work';
+
 
 const ResumeWork = styled.div`
-    float: left;
-    width: 70%;
-    margin-bottom: 30px;
+    position: absolute;
+    left: 390px;
+    top: 970px;
+    width: 1500px;
+    margin-bottom: 50px;
 `;
 
 const ItemDiv = styled.div``;
 
-const Pagination = styled(ReactPaginate)``;
+const Pagination = styled(ReactPaginate)`
+`;
 
 const PaginationBox = styled.div`
+    position: relative;
+    margin-bottom: 40px;
+    width: 1200px;
+
     .pagination{
         display: flex;
         justify-content: center;
         color: ${Colors.deepBlue};
+        text-align: center;
     }
 
     .pagination ul{

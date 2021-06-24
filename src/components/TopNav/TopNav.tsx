@@ -15,7 +15,8 @@ const InnerWrapper = styled.div`
 const LogoWrapper = styled.div`
     width: 10%; 
     margin-bottom: 10px;
-    margin-top: 2px;
+    margin-top: 5px;
+    margin-left: 10px;
 `;
 
 const LogoImg = styled.img`

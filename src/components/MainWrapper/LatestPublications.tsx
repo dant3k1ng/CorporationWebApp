@@ -1,14 +1,15 @@
+import styled from 'styled-components';
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
 import { IState } from '../../reducers';
 
 import { Colors } from '../../styledHelpers/Colors';
 import { H2 } from '../../styledHelpers/Components';
 
 const LatestPubs = styled.div`
-    float: left;
-    width: 71%;
+    position: relative;
+    left: 380px;
+    width: 1350px;
     height: 400px;
     background-color: ${Colors.white};
     margin-left: auto;
@@ -18,23 +19,33 @@ const LatestPubs = styled.div`
 `;
 
 const ImagePost = styled.div`
-    float: left;
     height: 400px;
     width: 30%;
     background-image: url("media/publications.png");
     background-attachment: auto;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 `;
 
 const ImagePostTxt = styled.div`
-    background: linear-gradient(0deg, rgb(72, 100, 131) 0%, rgba(72, 100, 131,0.7189250700280112) 22%, rgba(72, 100, 131,0.18671218487394958) 80%, rgba(72, 100, 131,0.0));
+    background: #3f6fa3;
+    background: linear-gradient(0deg, #3f6fa3 0%, #3f6fa3b7 10%, #3f6fa32f 100%);
+    background-size: 100%;
     height: 150px;
     font-size: 18px;
     text-align: left;
     color: ${Colors.white};
-    padding-left: 20px;
-    padding-right: 20px;
     padding-top: 250px;
+`;
+
+const Text = styled.div`
+    position: absolute;
+    top: 250px;
+    width: 350px;
+    height: 600px;
+    z-index: 100;
+    padding: 15px;
 `;
 
 const Span = styled.span`
@@ -59,18 +70,19 @@ const SpanLight = styled.span`
 const SpanLight2 = styled.span`
     color: ${Colors.white};
     font-size: 14px;
-    float : left;
     margin-left: 10px;
 `;
 
 const MorePubs = styled.div`
-    float: left;
-    width: 70%;
+    width: 85%;
     height: 400px;
+    position: relative;
+    top: -400px;
+    left: 80px;
 `;
 
 const Publication = styled.div`
-    width: 90%;
+    width: 110%;
     height: 100px;
     font-size: 17px;
     margin-left: auto;
@@ -115,11 +127,12 @@ export const LatestPublications : FC = () => {
         <LatestPubs>
             <ImagePost>
                 <ImagePostTxt>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies, 
-                    ante quis placerat interdum, neque urna ornare ipsum, nec venenatis diam velit eget tortor. <br/><br/>
-                    <SpanLight> 7 jan. 2021 </SpanLight>
-                    <Img src={photo?.thumbnailUrl} alt="photo" />
-                    <SpanLight2> {user?.name} </SpanLight2>
+                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies, 
+                        ante quis placerat interdum, neque urna ornare ipsum, nec venenatis diam velit eget tortor. <br/><br/>
+                        <SpanLight> 7 jan. 2021 </SpanLight>
+                        <Img src={photo?.thumbnailUrl} alt="photo" />
+                        <SpanLight2> {user?.name} </SpanLight2>
+                    </Text>
                 </ImagePostTxt>
             </ImagePost>
             <MorePubs>
