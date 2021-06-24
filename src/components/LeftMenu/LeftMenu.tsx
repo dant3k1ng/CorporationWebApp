@@ -114,19 +114,19 @@ export default function LeftMenu() {
                     
                     <YourProfile>
                         <YourProfileDiv> 
-                            <CustomImg src="media/icons/network.png" /> Your Network 
-                            <AddImg src="media/icons/user-plus.png"/>
+                            <CustomImg src="/media/icons/network.png" /> Your Network 
+                            <AddImg src="/media/icons/user-plus.png"/>
                         </YourProfileDiv> 
                         <YourProfileDiv> 
-                            <CustomImg src="media/icons/publications.png" /> Your Publications 
-                            <AddImg src="media/icons/plus.png"/>
+                            <CustomImg src="/media/icons/publications.png" /> Your Publications 
+                            <AddImg src="/media/icons/plus.png"/>
                         </YourProfileDiv> 
                     </YourProfile>
                 </UserProfile>
                 <Tabs>
-                    <TabsDiv> <CustomImg src="media/icons/publications.png"/>  Publications </TabsDiv>
-                    <TabsDiv> <CustomImg src="media/icons/ecosystem.png"/> Ecosystem </TabsDiv>
-                    <TabsDiv> <CustomImg src="media/icons/entities.png"/> Entities </TabsDiv>
+                    <TabsDiv> <CustomImg src="/media/icons/publications.png"/>  Publications </TabsDiv>
+                    <TabsDiv> <CustomImg src="/media/icons/ecosystem.png"/> Ecosystem </TabsDiv>
+                    <TabsDiv> <CustomImg src="/media/icons/entities.png"/> Entities </TabsDiv>
                 </Tabs>
             </InnerWrapper>
         </Wrapper>

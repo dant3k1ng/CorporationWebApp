@@ -139,7 +139,7 @@ export const LatestPublications : FC = () => {
                 <H2> Latest Publications </H2>
                 
                 <Publication>
-                    <PublicationPhoto src="media/man.jpg"/>
+                    <PublicationPhoto src="/media/man.jpg"/>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies, 
                     ante quis placerat interdum, neque urna ornare ipsum, nec venenatis diam velit eget tortor. <br/><br/>
                     <Span> 7 jan. 2021 </Span>
@@ -147,7 +147,7 @@ export const LatestPublications : FC = () => {
                     <Span2> {user?.name} </Span2>
                 </Publication>
                 <Publication>
-                    <PublicationPhoto src="media/man.jpg"/>
+                    <PublicationPhoto src="/media/man.jpg"/>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies, 
                     ante quis placerat interdum, neque urna ornare ipsum, nec venenatis diam velit eget tortor. <br/><br/>
                     <Span> 7 jan. 2021 </Span>
@@ -155,7 +155,7 @@ export const LatestPublications : FC = () => {
                     <Span2> {user?.name} </Span2>
                 </Publication>
                 <Publication>
-                    <PublicationPhoto src="media/man.jpg"/>
+                    <PublicationPhoto src="/media/man.jpg"/>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies, 
                     ante quis placerat interdum, neque urna ornare ipsum, nec venenatis diam velit eget tortor. <br/><br/>
                     <Span> 7 jan. 2021 </Span>

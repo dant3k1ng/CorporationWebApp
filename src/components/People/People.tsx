@@ -1,32 +1,35 @@
 import styled from 'styled-components';
-import { Colors } from '../../../styledHelpers/Colors';
+import { Colors } from '../../styledHelpers/Colors';
 
-import MainLayout from '../../../Layout/MainLayout';
+import MainLayout from '../../Layout/MainLayout';
+
 
 const Content = styled.div`
     width: 100%;
     height: 100vh;
     font-size: 24px;
     color: ${Colors.grey};
-    text-align: center;
+    text-align: left;
     background-color: ${Colors.bgGrey};
+    margin-top: 50px;
 `;
 
 const H1 = styled.h1`
     font-size: 24px;
-    color: ${Colors.grey}
+    color: ${Colors.grey};
+    font-weight: bold;
 `;
 
-function Publications() {
+function People() {
     return (
         <MainLayout>
             <Content>
-                <H1> Publications </H1>
+                <H1> People </H1>
 
-                Work in progress. Please be patient
+                Work in progress. Please be patient.
             </Content>
         </MainLayout>
     )
 }
 
-export default Publications;
+export default People;

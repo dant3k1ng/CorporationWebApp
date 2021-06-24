@@ -3,11 +3,8 @@ import { compose, createStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import { BrowserRouter } from 'react-router-dom';
 
-import { TopNav } from '../src/components/TopNav/TopNav';
-import LeftMenu from '../src/components/LeftMenu/LeftMenu';
 import AppReducers from "./reducers";
 import Div from './Data';
-import MainPage from './components/MainPage/MainPage';
 import Router from './Router/Router';
 
 
@@ -34,8 +31,3 @@ function App() {
 }
 
 export default App;
-
-/**
- * <Div/>
-                    
-                    */

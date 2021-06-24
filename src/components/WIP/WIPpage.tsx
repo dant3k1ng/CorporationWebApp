@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Colors } from '../../../styledHelpers/Colors';
+import { Colors } from '../../styledHelpers/Colors';
 
-import MainLayout from '../../../Layout/MainLayout';
+import MainLayout from '../../Layout/MainLayout';
 
 const Content = styled.div` 
     margin-top:50px;

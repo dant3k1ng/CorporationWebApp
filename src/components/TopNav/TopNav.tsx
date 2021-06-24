@@ -106,25 +106,25 @@ export const TopNav: FC = () => {
         <Wrapper>
             <InnerWrapper>
                 <LogoWrapper>
-                    <LogoImg src="media/logo.png" alt="logo" />
+                    <LogoImg src="/media/logo.png" alt="logo" />
                 </LogoWrapper>
                 <ExpendedMenu />
                 <InputWrapper>
                     <CustomInput type="text" placeholder="Search Legalcluster" />
-                    <CustomImg src="media/icons/search.png" alt="search icon" />
+                    <CustomImg src="/media/icons/search.png" alt="search icon" />
                 </InputWrapper>
                 <IconsWrapper>
                     <ImgDiv2>
-                        <CustomImg src="media/icons/house.png" alt="house icon"/>
+                        <CustomImg src="/media/icons/house.png" alt="house icon"/>
                     </ImgDiv2>
                     <ImgDiv>
-                        <CustomImg src="media/icons/comments.png" alt="comments icon"/>
+                        <CustomImg src="/media/icons/comments.png" alt="comments icon"/>
                         <Notification1>
                             3
                         </Notification1>
                     </ImgDiv>
                     <ImgDiv>
-                        <CustomImg src="media/icons/bell.png" alt="bell icon"/>
+                        <CustomImg src="/media/icons/bell.png" alt="bell icon"/>
                         <Notification2>
                             3
                         </Notification2>
