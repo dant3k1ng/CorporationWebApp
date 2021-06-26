@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Colors } from '../../styledHelpers/Colors';
 import { fontSize } from '../../styledHelpers/FontSizes';
 import { IState } from '../../reducers/index';
-//import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
 
 
 const Wrapper = styled.div`
@@ -44,7 +44,15 @@ const YourProfile = styled.div`
 `;
 
 const CustomImg = styled.img`
-    width: 30px;
+    width: 28px;
+    float: left;
+    padding-right: 10px;
+`;
+
+const Text = styled.div`
+    float: left;
+    font-size: 24px;
+    padding-top: 3px;
 `;
 
 const H1 = styled.h1`
@@ -69,6 +77,7 @@ const Tabs = styled.div`
 const YourProfileDiv = styled.div`
     width: 100%;
     padding: 7px;
+    margin-top: 10px;
 `;
 
 const AddImg = styled.img`
@@ -77,6 +86,7 @@ const AddImg = styled.img`
     padding: 5px 10px 5px 10px;
     float: right;
     margin-right: 25px;
+    margin-top: -5px;
     width: 20px;
 `;
 
@@ -89,14 +99,19 @@ const ProfileImg = styled.img`
 `;
 
 const TabsDiv = styled.div`
-    margin-top: 15px;
+    height: 25px;
     margin-left: 5px;
 `;
 
-/*const Link1 = styled(Link)`
+const Link1 = styled(Link)`
     text-decoration: none;
-    color: ${Colors.deepBlue}
-`;*/
+    color: ${Colors.deepBlue};
+`;
+
+const Link2 = styled(Link)`
+    text-decoration: none;
+    color: ${Colors.black};
+`;
 
 export default function LeftMenu() {
     const user = useSelector((state: IState) => state.user);
@@ -107,26 +122,28 @@ export default function LeftMenu() {
             <InnerWrapper>
                 <UserProfile>
                     <ProfilePhoto>
-                        <ProfileImg src={photo?.thumbnailUrl} alt='photo'/>
-                        <H1> {user?.name} </H1>
-                        <H3> {user?.company.name} </H3>
+                        <Link1 to="/profile">
+                            <ProfileImg src={photo?.thumbnailUrl} alt='photo'/>
+                            <H1> {user?.name} </H1>
+                            <H3> {user?.company.name} </H3>
+                        </Link1>
                     </ProfilePhoto>
                     
                     <YourProfile>
                         <YourProfileDiv> 
                             <CustomImg src="/media/icons/network.png" /> Your Network 
-                            <AddImg src="/media/icons/user-plus.png"/>
+                            <Link1 to=""> <AddImg src="/media/icons/user-plus.png"/> </Link1>
                         </YourProfileDiv> 
                         <YourProfileDiv> 
                             <CustomImg src="/media/icons/publications.png" /> Your Publications 
-                            <AddImg src="/media/icons/plus.png"/>
+                            <Link1 to=""> <AddImg src="/media/icons/plus.png"/> </Link1>
                         </YourProfileDiv> 
                     </YourProfile>
                 </UserProfile>
                 <Tabs>
-                    <TabsDiv> <CustomImg src="/media/icons/publications.png"/>  Publications </TabsDiv>
-                    <TabsDiv> <CustomImg src="/media/icons/ecosystem.png"/> Ecosystem </TabsDiv>
-                    <TabsDiv> <CustomImg src="/media/icons/entities.png"/> Entities </TabsDiv>
+                    <TabsDiv> <Link2 to="/wip"> <CustomImg src="/media/icons/publications.png"/> <Text> Publications </Text> </Link2> </TabsDiv> <br/>
+                    <TabsDiv> <Link2 to="/wip"> <CustomImg src="/media/icons/ecosystem.png"/> <Text> Ecosystem </Text> </Link2> </TabsDiv> <br/>
+                    <TabsDiv> <Link2 to="/entities"> <CustomImg src="/media/icons/entities.png"/> <Text> Entities </Text> </Link2> </TabsDiv> 
                 </Tabs>
             </InnerWrapper>
         </Wrapper>

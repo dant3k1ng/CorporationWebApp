@@ -46,7 +46,7 @@ function UserProfile(props: IProps) {
         <Profile>
             <Img src={photo?.thumbnailUrl} alt="user" />
             <Text> {user} </Text> <br/>
-            <H3> <Link1 to=""> See profile </Link1> </H3>
+            <H3> <Link1 to="/profile"> See profile </Link1> </H3>
         </Profile>
     )
 }

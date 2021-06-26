@@ -37,7 +37,7 @@ const Search = (props: IProps) => {
     return (
         <InputBox>
             <Input onChange={props.inputChangeHandler} type='text' placeholder={props?.placeholder}/>
-            <SearchIcon src='media/icons/search.png'/>
+            <SearchIcon src='/media/icons/search.png'/>
             
         </InputBox>
     )

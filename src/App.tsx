@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import AppReducers from "./reducers";
 import Div from './Data';
-import Router from './Router/Router';
+import AppStaticData from './AppStaticData';
 
 
 const Wrapper = styled.div`
@@ -22,7 +22,7 @@ function App() {
             <BrowserRouter>
                 <Wrapper>
                     <Div />
-                    <Router />
+                    <AppStaticData />
                 </Wrapper>
             </BrowserRouter>
         </Provider>

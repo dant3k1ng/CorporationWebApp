@@ -3,17 +3,18 @@ import { Colors } from '../../styledHelpers/Colors';
 
 import MainLayout from '../../Layout/MainLayout';
 
-const Content = styled.div` 
-    margin-top:50px;
+
+const Content = styled.div`
     width: 100%;
     height: 100vh;
     font-size: 24px;
     color: ${Colors.grey};
-    text-align: center;
+    text-align: left;
     background-color: ${Colors.bgGrey};
+    margin-top: 50px;
 `;
 
-function WIPpage() {
+function WIP() {
     return (
         <MainLayout>
             <Content>
@@ -23,4 +24,4 @@ function WIPpage() {
     )
 }
 
-export default WIPpage;
+export default WIP;

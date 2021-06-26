@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import useDropdown from 'react-dropdown-hook';
 import { useState } from "react";
-import { BrowserRouter as Router, Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
 
 import UserProfile  from './UserProfile';
 import Logout from "./Logout"
@@ -140,34 +140,34 @@ export const ExpendedMenu: FC = () => {
                                     <MenuOption> <Link1 to="/"> <MenuImg src="/media/icons/house2.png"/> <P> Home </P> </Link1> </MenuOption>
                                 }
                                 {   'Publications'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to="/sides/publications"> <MenuImg src="/media/icons/publications.png"/> <P> Publications </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/publications"> <MenuImg src="/media/icons/publications.png"/> <P> Publications </P> </Link1> </MenuOption>
                                 }
                                 {   'People'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to="/sides/people"> <MenuImg src="/media/icons/people.png"/> <P> People </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/people"> <MenuImg src="/media/icons/people.png"/> <P> People </P> </Link1> </MenuOption>
                                 }
                                 {   'Entities'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to=""> <MenuImg src="/media/icons/entities2.png"/> <P> Entities </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/entities"> <MenuImg src="/media/icons/entities2.png"/> <P> Entities </P> </Link1> </MenuOption>
                                 }
                                 {   'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to="/sides/administration"> <MenuImg src="/media/icons/administration.png"/> <P> Administration </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/administration"> <MenuImg src="/media/icons/administration.png"/> <P> Administration </P> </Link1> </MenuOption>
                                 }
 
                                 <H3> Workspaces </H3> <br/>
 
                                 {   'Clinet contract'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to=""> <MenuImg src="/media/icons/contract.png"/> <P> Client contract </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/workplace/0"> <MenuImg src="/media/icons/contract.png"/> <P> Client contract </P> </Link1> </MenuOption>
                                 }
                                 {   'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to=""> <MenuImg src="/media/icons/contract.png"/> <P> Supplier contract </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/workplace/1"> <MenuImg src="/media/icons/contract.png"/> <P> Supplier contract </P> </Link1> </MenuOption>
                                 }
                                 {   'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to=""> <MenuImg src="/media/icons/entities2.png"/> <P> Corporate </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/workplace/2"> <MenuImg src="/media/icons/entities2.png"/> <P> Corporate </P> </Link1> </MenuOption>
                                 }
                                 {   'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to=""> <MenuImg src="/media/icons/book.png"/> <P> Group Norms </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/workplace/3"> <MenuImg src="/media/icons/book.png"/> <P> Group Norms </P> </Link1> </MenuOption>
                                 }
                                 {   'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to=""> <MenuImg src="/media/icons/contract.png"/> <P> Real estate contracts </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/workplace/4"> <MenuImg src="/media/icons/contract.png"/> <P> Real estate contracts </P> </Link1> </MenuOption>
                                 }
 
                             </CompanyDiv>
@@ -175,8 +175,8 @@ export const ExpendedMenu: FC = () => {
                                <br/> <H3> Account </H3> <br/>
                                
                                 <UserProfile filteredText = {inputText} />
-                                <MenuOption> <Link1 to=""> <MenuImg src="/media/icons/privacy.png"/> Privacy </Link1> </MenuOption>
-                                <MenuOption> <Link1 to=""> <MenuImg src="/media/icons/settings.png"/> Settings </Link1> </MenuOption>
+                                <MenuOption> <Link1 to="/wip"> <MenuImg src="/media/icons/privacy.png"/> Privacy </Link1> </MenuOption>
+                                <MenuOption> <Link1 to="/wip"> <MenuImg src="/media/icons/settings.png"/> Settings </Link1> </MenuOption>
                                
                                <Logout/>
                             </AccountDiv>

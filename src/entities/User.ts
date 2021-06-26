@@ -1,4 +1,4 @@
-export interface IUserAdress {
+export interface IUserAddress {
     street: string;
     suite: string;
     city: string;
@@ -16,8 +16,8 @@ export interface IUser {
     name: string;
     lastname: string;
     email: string;
-    address: string;
-    phoneNumber: string;
+    address: IUserAddress;
+    phone: string;
     website: string;
     company: IUserCompany
 }
