@@ -43,19 +43,39 @@ const HeaderBottom = styled.div`
 `;
 
 const DescriptionIcon = styled.img`
-    width: 80px;
+    width: 90px;
+    height: 90px;
     float: left;
+    margin-top: -30px;
+    margin-left: 20px;
+`;
+
+const Settings = styled.div`
+    width: 50px;
+    height: 20px;
+    position: relative;
+    text-align: center;
+    left: 1350px;
+    top: -90px;
+    img{
+        width: 23px;
+    }
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 const Title = styled.p`
     color: ${Colors.black};
     font-size: 24px;
     float: left;
+    margin-top: -80px;
 `;
 
 const Description = styled.span`
     color: ${Colors.darkGray};
     float: left;
+    margin-top: -40px;
 `;
 
 const InfoDiv = styled.div`
@@ -89,7 +109,7 @@ const ItemBox = styled.div`
     margin-top: 10px;
     float: left;
     width: 422px;
-    box-shadow: 0px 0px 10px 0px #868686be;
+    box-shadow: 0px 0px 5px 0px #a3a3a3bd;
 `;
 
 const ItemTitle = styled.span`
@@ -321,6 +341,8 @@ function WorkplacePage(props: IProps) {
             .then(data => setWorplace(data))
     }, [params.id])
 
+    
+
     return (
         <MainLayout>
             <WorkplaceDiv>
@@ -328,6 +350,7 @@ function WorkplacePage(props: IProps) {
                     <Header>
                     </Header>
                     <HeaderBottom>
+                        <Settings> <img src='/media/icons/cog.png' /> </Settings>
                         <DescriptionIcon src={props.workplace?.image} alt="photo"/>
                         <Title> {props.workplace?.title} title </Title> <br/> <br/>
                         <Description> {props.workplace?.description} description </Description>
@@ -338,7 +361,7 @@ function WorkplacePage(props: IProps) {
                         <Text> Start working on corporate matters </Text>
                         <Content>
                         <ItemBox>
-                            <ItemIcon src={props.workplace?.image} alt="icon"/>
+                            <ItemIcon src={props.workplace?.image } alt="icon"/>
                                 <ItemTitle>Explore your <b>entities</b></ItemTitle>
                                 <ItemDescription>Take a few minutes to look at the most important elements and specificities of your entities.</ItemDescription>
                         </ItemBox>
@@ -380,4 +403,4 @@ function WorkplacePage(props: IProps) {
 
 export default WorkplacePage;
 
-/* <ResumeDiv filteredText={inputText} filteredType={selectValue} /> */
+/* <ResumeDiv filteredText={inputText} filteredType={selectValue} loggedUserId={loggedUserId} /> */

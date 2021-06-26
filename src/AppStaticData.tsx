@@ -7,7 +7,7 @@ import { setUser } from "./reducers/UserAction";
 import { getPhoto } from "./api/Photo";
 import Router from "./Router/Router";
 import { setPhoto } from "./reducers/PhotoAction";
-import { setUserData } from "./reducers/UserDataAction"
+import { setUserData } from "./reducers/UserDataAction";
 import { getWorkplaces } from "./api/Workplace";
 import { setWorkplace } from "./reducers/WorkplaceAction";
 import { UserData } from "./entities/userData";
@@ -35,6 +35,7 @@ function AppStaticData() {
     }
 
     function getStaticUserData() {
+      
       const obj: UserData = {
         expertise: { "e4356ff": "Mergers and acquisition" },
         specialties: { "s46354543": "Cross border operation", "s56756856": "Transaction over 500M€/$" },

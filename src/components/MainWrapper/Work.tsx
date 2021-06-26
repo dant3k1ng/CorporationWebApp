@@ -5,6 +5,7 @@ import { IPhoto } from "../../entities/Photo";
 import { IUser } from "../../entities/User";
 import { Colors } from '../../styledHelpers/Colors';
 import { Interspace } from '../../styledHelpers/Components';
+import { Items } from "./Selector";
 
 
 const Card = styled.div`

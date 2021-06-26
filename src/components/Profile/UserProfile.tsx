@@ -1,12 +1,11 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { GridRowsProp } from "@material-ui/data-grid";
 
 
-import { Attachment, Information, ItemKeyValue } from '../../entities/userData';
 import { IState } from '../../reducers';
-import { useEffect } from 'react';
 import { setUserData } from '../../reducers/UserDataAction';
 import { Colors } from '../../styledHelpers/Colors';
 import MainLayout from '../../Layout/MainLayout';
@@ -25,6 +24,7 @@ import Terms from './view/Terms';
 import Proposals from './view/Proposals';
 import Review from './view/Review';
 import Fees from './view/Fees';
+import { Attachment, Information, ItemKeyValue } from '../../entities/userData';
 
 
 const ProfileDiv = styled.div`
@@ -157,7 +157,7 @@ function UserProfile() {
     }, [globalFees])
 
     const saveDataAndClose = () => {
-        if(userData !== null){
+        if(userData !== null) {
             dispatch(setUserData({
                 expertise: expertises,
                 specialties: specialties,

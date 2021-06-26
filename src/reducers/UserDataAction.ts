@@ -1,8 +1,8 @@
 import { UserData } from '../entities/userData';
 
-export const setUserData = (userData: UserData|null = null) => {
+export const setUserData = (serData: UserData|null = null) => {
     return{
         type: 'setUserData',
-        userData: userData
+        serData: serData
     };
 }

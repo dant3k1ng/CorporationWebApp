@@ -167,4 +167,4 @@ export default class ResumeDiv extends React.Component<IProps, IState> {
         return null;
     }
 
-};
+}
