@@ -67,6 +67,8 @@ interface IProps{
     comment: IComment;
     photo: IPhoto | null;
     user: IUser | null;
+
+    
 }
 
 export default function Work(props: IProps) {

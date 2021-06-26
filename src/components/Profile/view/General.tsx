@@ -12,10 +12,13 @@ const Tag = styled.div`
     border-radius: 4px;
     font-weight: 900;
     margin-right: 4px;
+    margin-left: 25px;
 `;
 const Title = styled.p`
     color: ${Colors.grey};
-    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
 `;
 const TagBox = styled.div`
     display: flex;
@@ -23,11 +26,12 @@ const TagBox = styled.div`
     flex-wrap: wrap;
     padding: 5px 0;
     margin-bottom: 4px;
+    margin-top: 10px;
 `;
 
 function General() {
 
-    const userData = useSelector((state: IState) => state.UserData);
+    const userData = useSelector((state: IState) => state.userData);
 
     const expertiseItems: JSX.Element[] = [];
     const expertises: ItemKeyValue = (userData?.expertise !== null && userData?.expertise !== undefined ? userData.expertise : {})
@@ -74,6 +78,9 @@ function General() {
             <TagBox>{admissionItems}</TagBox>
             <Title>Counties</Title>
             <TagBox>{countieItems}</TagBox>
+
+
+            <hr/>
         </div>
     );
 }

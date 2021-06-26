@@ -3,14 +3,26 @@ import styled from "styled-components";
 
 import { ItemKeyValue } from "../../../entities/userData";
 import { IState } from "../../../reducers";
+import { Colors } from "../../../styledHelpers/Colors";
 
-const Title = styled.p``;
+const Title = styled.p`
+    color: ${Colors.grey};
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+`;
 const TagBox = styled.div``;
-const Text = styled.p``;
+const Text = styled.p`
+    color: ${Colors.darkGray};
+    margin-left: 15px;
+    margin-bottom: 20px;
+`;
 
 function Services() {
 
-    const userData = useSelector((state: IState) => state.UserData);
+    const userData = useSelector((state: IState) => state.userData);
 
     const items: JSX.Element[] = [];
     const services: ItemKeyValue = (userData?.services !== null && userData?.services !== undefined ? userData.services : {})
@@ -20,10 +32,13 @@ function Services() {
     }
 
     return (
+        <>
         <TagBox>
             <Title>Services and projects</Title>
             {items}
         </TagBox>
+        <hr/>
+        </>
     );
 }
 

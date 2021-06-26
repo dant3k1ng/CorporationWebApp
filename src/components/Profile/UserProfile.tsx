@@ -69,21 +69,21 @@ const EditButton = styled.button`
 
 function UserProfile() {
     const dispatch = useDispatch();
-    const userData = useSelector((state: IState) => state.UserData);
+    const userData = useSelector((state: IState) => state.userData);
 
     const [editProfileInformationMode, setProfileInformation] = useState(false);
     const [editMode, setEditMode] = useState(false);
 
-    const globalExpertises = useSelector((state: IState) => state.UserData?.expertise)
-    const globalAdmission = useSelector((state: IState) => state.UserData?.admission)
-    const globalCounties = useSelector((state: IState) => state.UserData?.counties)
-    const globalSpecialties = useSelector((state: IState) => state.UserData?.specialties)
-    const globalInformations = useSelector((state: IState) => state.UserData?.informations)
-    const globalServices = useSelector((state: IState) => state.UserData?.services)
-    const globalTerms = useSelector((state: IState) => state.UserData?.terms)
-    const globalProposals = useSelector((state: IState) => state.UserData?.proposals)
-    const globalInternalReviews = useSelector((state: IState) => state.UserData?.internalReviews)
-    const globalFees = useSelector((state: IState) => state.UserData?.fees)
+    const globalExpertises = useSelector((state: IState) => state.userData?.expertise)
+    const globalAdmission = useSelector((state: IState) => state.userData?.admission)
+    const globalCounties = useSelector((state: IState) => state.userData?.counties)
+    const globalSpecialties = useSelector((state: IState) => state.userData?.specialties)
+    const globalInformations = useSelector((state: IState) => state.userData?.informations)
+    const globalServices = useSelector((state: IState) => state.userData?.services)
+    const globalTerms = useSelector((state: IState) => state.userData?.terms)
+    const globalProposals = useSelector((state: IState) => state.userData?.proposals)
+    const globalInternalReviews = useSelector((state: IState) => state.userData?.internalReviews)
+    const globalFees = useSelector((state: IState) => state.userData?.fees)
 
     const [expertises, setExpertises] = useState<ItemKeyValue>({});
     const [specialties, setSpecialties] = useState<ItemKeyValue>({});
@@ -218,8 +218,8 @@ function UserProfile() {
                         <>
                             <General />
                             <Informations />
-                            <Services />
                             <Terms />
+                            <Services />
                             <Proposals />
                             <Review />
                             <Fees />

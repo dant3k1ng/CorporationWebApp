@@ -5,26 +5,18 @@ import { Attachment } from "../../../entities/userData";
 
 const TermsDiv = styled.div`
 
-    img{
-        width: 30px;
-    }
+
 `;
 const TermsBox = styled.div`
 
-img{
-        width: 30px;
-    }
+
 `;
 const FileName = styled.div`
 
-img{
-        width: 30px;
-    }
+
 `;
 const InputTag = styled.input`
-img{
-        width: 30px;
-    }
+
 `;
 const EditButton = styled.button`
 img{
@@ -32,22 +24,16 @@ img{
     }
 `;
 const InputBox = styled.div`
-img{
-        width: 30px;
-    }
+
 `;
 const Box = styled.div`
-img{
-        width: 30px;
-    }
+
 `;
 
 const Title = styled.p``;
 
 const TagBox = styled.div`
-img{
-        width: 30px;
-    }
+
 `;
 
 interface IProps {

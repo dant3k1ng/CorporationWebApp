@@ -155,19 +155,19 @@ export const ExpendedMenu: FC = () => {
                                 <H3> Workspaces </H3> <br/>
 
                                 {   'Clinet contract'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to="/workplace/0"> <MenuImg src="/media/icons/contract.png"/> <P> Client contract </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/workplace/1"> <MenuImg src="/media/icons/contract.png"/> <P> Client contract </P> </Link1> </MenuOption>
                                 }
                                 {   'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to="/workplace/1"> <MenuImg src="/media/icons/contract.png"/> <P> Supplier contract </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/workplace/2"> <MenuImg src="/media/icons/contract.png"/> <P> Supplier contract </P> </Link1> </MenuOption>
                                 }
                                 {   'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to="/workplace/2"> <MenuImg src="/media/icons/entities2.png"/> <P> Corporate </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/workplace/3"> <MenuImg src="/media/icons/entities2.png"/> <P> Corporate </P> </Link1> </MenuOption>
                                 }
                                 {   'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to="/workplace/3"> <MenuImg src="/media/icons/book.png"/> <P> Group Norms </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/workplace/4"> <MenuImg src="/media/icons/book.png"/> <P> Group Norms </P> </Link1> </MenuOption>
                                 }
                                 {   'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
-                                    <MenuOption> <Link1 to="/workplace/4"> <MenuImg src="/media/icons/contract.png"/> <P> Real estate contracts </P> </Link1> </MenuOption>
+                                    <MenuOption> <Link1 to="/workplace/5"> <MenuImg src="/media/icons/contract.png"/> <P> Real estate contracts </P> </Link1> </MenuOption>
                                 }
 
                             </CompanyDiv>

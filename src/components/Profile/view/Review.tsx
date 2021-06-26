@@ -4,8 +4,16 @@ import { GridColDef } from "@material-ui/data-grid";
 import { useSelector } from "react-redux";
 
 import { IState } from "../../../reducers";
+import { Colors } from "../../../styledHelpers/Colors";
 
-const Title = styled.p``;
+const Title = styled.p`
+    color: ${Colors.grey};
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+`;
 
 const InternalReviewsWrapper = styled.div`
     display: flex;
@@ -26,7 +34,7 @@ function InternalReviews() {
         reviewsColumns[i].editable = false;
     }
 
-    const rows = useSelector((state: IState) => state.UserData?.internalReviews);
+    const rows = useSelector((state: IState) => state.userData?.internalReviews);
     if (rows === undefined)
         return null;
 

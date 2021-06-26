@@ -1,19 +1,26 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { DataGrid } from '@material-ui/data-grid';
-import { GridColDef } from "@material-ui/data-grid";
+import { DataGrid, GridColDef } from '@material-ui/data-grid';
 
-import { IState } from "../../../reducers";
+import { IState } from "../../../reducers/index";
+import { Colors } from "../../../styledHelpers/Colors";
 
 const FeesWrapper = styled.div`
     display: flex;
     flex-direction: column;
 `;
 
-const Title = styled.p``;
+const Title = styled.p`
+    color: ${Colors.grey};
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+`;
 
 function Fees() {
-
+    
     const feesColumns: GridColDef[] = [
         { field: 'year', headerName: 'Year', width: 150, editable: false },
         { field: 'cost_center', headerName: 'Cost center', width: 150, editable: false },
@@ -25,7 +32,7 @@ function Fees() {
         feesColumns[i].editable = false;
     }
 
-    const rows = useSelector((state: IState) => state.UserData?.fees);
+    const rows = useSelector((state: IState) => state.userData?.fees);
     if (rows === undefined)
         return null;
 
@@ -33,7 +40,7 @@ function Fees() {
         <FeesWrapper>
             <Title>Amount of fess</Title>
             <div style={{ minHeight: 360, width: '100%' }}>
-                <DataGrid rows={rows} columns={feesColumns} hideFooter />
+                <DataGrid rows={rows} columns={feesColumns} hideFooter/>
             </div>
         </FeesWrapper>
     );

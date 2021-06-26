@@ -8,126 +8,20 @@ import { GetLoggedUserId } from "../../helpers/User";
 import { Items } from "../MainWrapper/Selector";
 import { Colors } from "../../styledHelpers/Colors";
 import MainLayout from "../../Layout/MainLayout";
-import ResumeDiv from '../MainWrapper/Work';
+import ResumeDiv from '../MainWrapper/Resume';
 import Selector from '../MainWrapper/Selector';
 import Search from '../MainWrapper/Search';
+import WorkplaceContent from "./WorkplaceContent";
 
 const WorkplaceDiv = styled.div`
     width: 1400px;
-    min-height: 80vh;
+    height: 280vh;
     background-color: ${Colors.white};
     margin-left: 400px;
     margin-top: 40px;
+    margin-bottom: 40px;
     padding-bottom: 40px;
     border-radius: 5px;
-`;
-
-const HeaderDiv = styled.div`
-    box-shadow: 0px 5px 10px -3px #c9c7c7bc;
-`;
-
-const Header = styled.div`
-    background-image: url('/media/workplace-bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 200px;
-`;
-
-const HeaderBottom = styled.div`
-    width: 100%;
-    height: 100px;
-    background-color: ${Colors.white};
-    margin-top: 100px;
-`;
-
-const DescriptionIcon = styled.img`
-    width: 90px;
-    height: 90px;
-    float: left;
-    margin-top: -30px;
-    margin-left: 20px;
-`;
-
-const Settings = styled.div`
-    width: 50px;
-    height: 20px;
-    position: relative;
-    text-align: center;
-    left: 1350px;
-    top: -90px;
-    img{
-        width: 23px;
-    }
-    &:hover{
-        cursor: pointer;
-    }
-`;
-
-const Title = styled.p`
-    color: ${Colors.black};
-    font-size: 24px;
-    float: left;
-    margin-top: -80px;
-`;
-
-const Description = styled.span`
-    color: ${Colors.darkGray};
-    float: left;
-    margin-top: -40px;
-`;
-
-const InfoDiv = styled.div`
-    width: 100%;
-    height: 400px;
-`;
-
-const Text = styled.div`
-    margin-top: 20px;
-    padding-left: 20px;
-    color: ${Colors.darkGray};
-    font-size: 22px;
-`;
-
-const Content = styled.div`
-
-`;
-
-const ItemsDiv = styled.div`
-    width: 100%;
-    height: 200px;
-`;
-
-const ItemBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    background-color: ${Colors.white};
-    border-radius: 4px;
-    padding: 14px 10px;
-    margin-left: 15px;
-    margin-top: 10px;
-    float: left;
-    width: 422px;
-    box-shadow: 0px 0px 5px 0px #a3a3a3bd;
-`;
-
-const ItemTitle = styled.span`
-  font-size: 1.2rem;
-  padding: 14px 0;
-`;
-
-const ItemDescription = styled.span`
-  font-size: 0.92rem;
-  color: ${Colors.deepBlue};
-`;
-
-const ItemIcon = styled.img`
-  font-size: 2.1rem;
-
-  & {
-    color: ${Colors.deepBlue};
-  }
 `;
 
 const Options = styled.div`
@@ -310,20 +204,22 @@ const More = styled.button`
     }
 `;
 
+const ResumeWork = styled.div`
+    position: relative;
+    left: -350px;
+    top: -1000px;
+`;
+
 interface IRouteParams {
     id: string;
 }
 
-interface IProps {
-    workplace: IWorkplace;
-}
-
-function WorkplacePage(props: IProps) {
+function WorkplacePage() {
 
     const loggedUserId = GetLoggedUserId();
     const params = useParams<IRouteParams>();
     const [inputText, setInputText] = useState("");
-    const [workspace, setWorplace] = useState<IWorkplace | null>(null);
+    const [workplace, setWorplace] = useState<IWorkplace | null>(null);
     const [selectValue, setSelectedValue] = useState(Items.All);
 
     const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -341,43 +237,12 @@ function WorkplacePage(props: IProps) {
             .then(data => setWorplace(data))
     }, [params.id])
 
-    
 
-    return (
+    return workplace !== null ?
+       
         <MainLayout>
             <WorkplaceDiv>
-                <HeaderDiv>
-                    <Header>
-                    </Header>
-                    <HeaderBottom>
-                        <Settings> <img src='/media/icons/cog.png' /> </Settings>
-                        <DescriptionIcon src={props.workplace?.image} alt="photo"/>
-                        <Title> {props.workplace?.title} title </Title> <br/> <br/>
-                        <Description> {props.workplace?.description} description </Description>
-                    </HeaderBottom>
-                </HeaderDiv>
-                <ItemsDiv>
-                    <InfoDiv>
-                        <Text> Start working on corporate matters </Text>
-                        <Content>
-                        <ItemBox>
-                            <ItemIcon src={props.workplace?.image } alt="icon"/>
-                                <ItemTitle>Explore your <b>entities</b></ItemTitle>
-                                <ItemDescription>Take a few minutes to look at the most important elements and specificities of your entities.</ItemDescription>
-                        </ItemBox>
-                        <ItemBox>
-                            <ItemIcon src={props.workplace?.image} alt="icon"/>
-                                <ItemTitle>Structure the <b>owership</b></ItemTitle>
-                                <ItemDescription>Get a clear view of the owership by looking at the relations between individuals and entities.</ItemDescription>
-                        </ItemBox>
-                        <ItemBox>
-                            <ItemIcon src={props.workplace?.image} alt="icon"/>
-                                <ItemTitle>Define the <b>calendar</b></ItemTitle>
-                                <ItemDescription>Prepare future events by creating detailed plans around the life of your entity.</ItemDescription>
-                        </ItemBox>
-                        </Content>
-                    </InfoDiv>
-                </ItemsDiv>
+                <WorkplaceContent workplace={workplace}/>
                 <Options>
                     <OptionsTop>
                         <OptionsTopTxt> Latest updates </OptionsTopTxt>
@@ -395,12 +260,11 @@ function WorkplacePage(props: IProps) {
                         <More> ... </More>
                     </OptionsBottom>
                 </Options>
-                
+                <ResumeWork>
+                    <ResumeDiv  filteredText={inputText} filteredType={selectValue} loggedUserId={loggedUserId} />
+                </ResumeWork>
             </WorkplaceDiv>
-        </MainLayout>
-    )
+        </MainLayout> : <> </>
 }
 
 export default WorkplacePage;
-
-/* <ResumeDiv filteredText={inputText} filteredType={selectValue} loggedUserId={loggedUserId} /> */

@@ -14,8 +14,6 @@ export interface Information
     hourlyFeeNegociated?: boolean;
 }
 
-
-
 export interface UserData {
     expertise: ItemKeyValue;
     specialties: ItemKeyValue;
